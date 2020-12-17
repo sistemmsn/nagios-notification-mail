@@ -131,6 +131,7 @@ define contact {
 
  ```markdown
 define contact {
+  
   contact_name                    Support                     
   use                             generic-contact             
   alias                           Business support team
