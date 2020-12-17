@@ -9,7 +9,7 @@ Ejemplo de notificación de servicio:
 
 ### Large image
 
-![GitHub Logo](/images/ejemplo.png)
+![Ejemplo](/images/ejemplo.png)
 
 ### Markdown
 
