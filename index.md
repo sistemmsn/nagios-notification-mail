@@ -7,6 +7,10 @@ Esto acorta el tiempo de identificación del problema, aumenta la transparencia 
 
 Ejemplo de notificación de servicio:
 
+### Large image
+
+![ejemplo](https://github.com/sistemmsn/nagios-notification/blob/gh-pages/ejemplo.png)
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
