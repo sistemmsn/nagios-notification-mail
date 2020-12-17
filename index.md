@@ -93,7 +93,7 @@ my $logofile = "/srv/www/std-root/nagios.fm4dd.com/images/nagios-mail.gif";
 # 'service-email-pnp4n-int-en' command definition, sends
 # multipart HTML e-mails, English with Nagios URL's + graph
 # ##########################################################
-define command{
+define command {
 command_name    service-email-pnp4n-int
 command_line    $USER1$/pnp4n_send_service_mail.pl  -p "Nombre de la empresa, o lo que quieras poner."  -r "$CONTACTEMAIL$"  -c "$CONTACTADDRESS1$" -f graph -u -l es  
  }
@@ -101,7 +101,7 @@ command_line    $USER1$/pnp4n_send_service_mail.pl  -p "Nombre de la empresa, o 
 - Nota opcional: este parámetro es para agregar a personas con en la parte "cc" ósea con copia ( -c "$CONTACTADDRESS1$")
 
  ```markdown
-define command{
+define command {
 command_name    host-email-pnp4n-int
 command_line    $USER1$/pnp4n_send_host_mail.pl  -p "Nombre de la empresa, o lo que quieras poner."  -r "$CONTACTEMAIL$"  -c "$CONTACTADDRESS1$" -f graph -u -l es 
 }
@@ -130,7 +130,7 @@ define contact {
 -- Crearemos un nuevo contact name 
 
  ```markdown
-define contact{
+define contact {
   contact_name                    Support                     
   use                             generic-contact             
   alias                           Business support team
