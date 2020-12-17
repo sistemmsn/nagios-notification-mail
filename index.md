@@ -114,14 +114,14 @@ command_line    $USER1$/pnp4n_send_host_mail.pl  -p "Nombre de la empresa, o lo 
  ```markdown
 define contact {
 
-    name                            generic-contact         ; The name of this contact template
-    service_notification_period     24x7                    ; service notifications can be sent anytime
-    host_notification_period        24x7                    ; host notifications can be sent anytime
-    service_notification_options    w,u,c,r,f,s             ; send notifications for all service states, flapping events, and scheduled downtime events
-    host_notification_options       d,u,r,f,s               ; send notifications for all host states, flapping events, and scheduled downtime events
-    service_notification_commands   `service-email-pnp4n-int`,notify-service-by-telegram  ; send service notifications via email
-    host_notification_commands      host-email-pnp4n-int,notify-host-by-telegram ; send host notifications via email
-    register                        0                       ; DON'T REGISTER THIS DEFINITION - ITS NOT A REAL CONTACT, JUST A TEMPLATE!
+    name                            generic-contact         
+    service_notification_period     24x7                    
+    host_notification_period        24x7                    
+    service_notification_options    w,u,c,r,f,s             
+    host_notification_options       d,u,r,f,s               
+    service_notification_commands   <i>service-email-pnp4n-int<i>,notify-service-by-telegram  
+    host_notification_commands      host-email-pnp4n-int,notify-host-by-telegram
+    register                        0                       
 }
 ```
 
