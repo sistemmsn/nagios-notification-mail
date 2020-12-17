@@ -1,8 +1,11 @@
-## Welcome to GitHub Pages
+## Scripts de notificación flexibles de Nagios
 
-You can use the [editor on GitHub](https://github.com/sistemmsn/nagios-notification/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Nagios Core solo viene con una estructura básica para alertas de correo electrónico basadas en texto plano. Estos scripts complementarios llevan la notificación más allá al agregar formato HTML, codificación de colores, selecciones de idioma y más. La integración con dos paquetes de gráficos populares, Nagiosgraph y PNP4Nagios, agrega visualización de problemas a las alertas.
+
+Esto acorta el tiempo de identificación del problema, aumenta la transparencia del problema y reduce el tiempo de reparación.
+
+Ejemplo de notificación de servicio:
 
 ### Markdown
 
