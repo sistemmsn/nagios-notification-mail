@@ -89,10 +89,10 @@ my $logofile = "/srv/www/std-root/nagios.fm4dd.com/images/nagios-mail.gif";
 ### Parametros en el command.cfg
 
 ```markdown
-###########################################################
+# ###########################################################
 # 'service-email-pnp4n-int-en' command definition, sends
 # multipart HTML e-mails, English with Nagios URL's + graph
-###########################################################
+# ##########################################################
 define command{
 command_name    service-email-pnp4n-int
 command_line    $USER1$/pnp4n_send_service_mail.pl  -p "Nombre de la empresa, o lo que quieras poner."  -r "$CONTACTEMAIL$"  -c "$CONTACTADDRESS1$" -f graph -u -l es  
@@ -119,20 +119,31 @@ define contact {
     host_notification_period        24x7                    
     service_notification_options    w,u,c,r,f,s             
     host_notification_options       d,u,r,f,s               
-    service_notification_commands   <i>service-email-pnp4n-int<i>,notify-service-by-telegram  
-    host_notification_commands      host-email-pnp4n-int,notify-host-by-telegram
+    service_notification_commands   service-email-pnp4n-int 
+    host_notification_commands      host-email-pnp4n-int
     register                        0                       
 }
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Parametros en el contacs.cfg
 
-### Jekyll Themes
+-- Crearemos un nuevo contact name 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sistemmsn/nagios-notification/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+ ```markdown
+define contact{
+  contact_name                    Support                     
+  use                             generic-contact             
+  alias                           Business support team
+  email                           soporte@empresa.com                 
+  address1                        soporte1@empresa.com,soporte2@empresa.com
+  service_notification_commands   service-email-pnp4n-int
+  host_notification_commands      host-email-pnp4n-int
+}
+```
+- Nota una vez creado el contac name lo agregamos a nuesto contactgroup
 
-### Support or Contact
 
 
 
-Having trouble with Pages? Check out our [documentation](nagios.fm4dd.com) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- Para obtener más detalles, consulte [GitHub fm4dd](https://github.com/fm4dd/nagios4dd).
+
