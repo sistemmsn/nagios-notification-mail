@@ -140,10 +140,11 @@ define contact{
   host_notification_commands      host-email-pnp4n-int
 }
 ```
-- Nota una vez creado el contac name lo agregamos a nuesto contactgroup
+- Nota una vez creado el contact name lo agregamos a nuesto contactgroup
 
 
 
+<h2>Referencias</h2>
 
-- Para obtener más detalles, consulte [GitHub fm4dd](https://github.com/fm4dd/nagios4dd).
+-- Para obtener más detalles, consulte [GitHub fm4dd](https://github.com/fm4dd/nagios4dd).
 
