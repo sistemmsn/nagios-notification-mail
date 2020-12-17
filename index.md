@@ -13,10 +13,7 @@ Ejemplo de notificación de servicio:
 
 ### Requerimiento
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-
-Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST y SERVICES
+Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST y SERVICES.
 
 - Nota: la contraseña de nagios -no- de debe de llevar caracteres extraños como: $%"# ya que el plugin lo toma como otros valores y no como parte de la contraseña.
 
@@ -32,14 +29,65 @@ Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST 
  yum install perl-File-Which
 ```
 
-Parámetros a modificar dentro de los 2 scritp (host y services)
+Parámetros a modificar dentro de los 2 scritp (host y services).
 
 ```markdown
 # the sender e-mail address to be seen by recipients
 my $mail_sender  = "Nagios Monitoring <no-reply\@tuempresadecorreo.com>";
 ```
-Nota: aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo agregar ese remitente como seguro. 
+- Nota: aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo hay que agregar ese remitente como seguro.
+`ojo` este servicio no depende de spotfix o smtp-cli.
 
+```markdown
+# The Nagios CGI URL for integrated service links
+my $nagios_cgiurl      = "http://192.168.1.1/nagios/cgi-bin";
+```
+
+```markdown
+# ########################################################################
+# Here we set the URL to pick up the RRD data files for the optional graph
+# image generation. Modified by Robert Becht for use with PNP4Nagios.
+# The PNP4Nagios URL : if not used we can set $pnp4nagios_url = undef;
+# ########################################################################
+my $pnp4nagios_url     = "http://192.168.1.1/pnp4nagios";
+my $graph_history      = 48; # in hours, a good range is between 12...48
+``` 
+
+```markdown
+# ########################################################################
+# If web authentication is needed, configure the access parameters below:
+# ########################################################################
+my $pnp4nagios_auth   = "true";
+my $server_port       = "192.168.1.1:80";
+my $auth_name         = "Nagios Access";  en el auth name lo puedes ver en cat/etc/httpd/conf.d/pnp4nagios.conf (AuthName "Nagios Access")
+
+my $web_user          = "nagiosadmin"; el usuario de nagios con el que accedes a la web
+my $web_pass          = "123456789"; y la contraseña de nagiosadmin
+```  
+
+
+```markdown
+# ########################################################################
+# SMTP related data: If the commandline argument -H/--smtphost was not
+# given, we use the provided value in $o_smtphost below as the default.
+# If the mailserver requires auth, an example is further down the code.
+# ########################################################################
+my $domain            = "\@tuempresadecorreo.com";
+```
+
+- Nota aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo agregar ese remitente como seguro.
+
+
+Aqui iria su logo de la empresa.
+
+```markdown
+# ########################################################################
+# This is the logo image file, the path must point to a valid JPG, GIF or
+# PNG file, i.e. the nagios logo. Best size is rectangular up to 160x80px.
+# example: [nagioshome]/share/images/NagiosEnterprises-whitebg-112x46.png
+# ########################################################################
+my $logofile = "/srv/www/std-root/nagios.fm4dd.com/images/nagios-mail.gif";
+```
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
