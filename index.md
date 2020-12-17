@@ -7,18 +7,27 @@ Esto acorta el tiempo de identificación del problema, aumenta la transparencia 
 
 Ejemplo de notificación de servicio:
 
-### Large image
+### Imagen
 
 ![Ejemplo](/images/ejemplo.png)
 
-### Markdown
+### Requerimiento
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
 
-# Header 1
+# yum install perl-MIME-tools
+# yum install perl-libwww-perl
+# yum install netpbm
+# yum install perl-Mail-Sendmail
+# yum install perl-Getopt-Long
+# yum install perl-Digest
+# yum install perl-LWP-Protocol-https
+# yum install perl-File-Which
+
+
 ## Header 2
 ### Header 3
 
@@ -33,6 +42,8 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
+
+
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
@@ -41,4 +52,6 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+Having trouble with Pages? Check out our [documentation](nagios.fm4dd.com) or [contact support](https://github.com/contact) and we’ll help you sort it out.
