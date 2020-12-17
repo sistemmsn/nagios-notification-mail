@@ -9,7 +9,7 @@ Ejemplo de notificación de servicio:
 
 ### Large image
 
-![Branching](https://github.com/sistemmsn/nagios-notification/blob/gh-pages/ejemplo.png)
+![Branching](/sistemmsn/nagios-notification/blob/gh-pages/ejemplo.png?raw=true)
 
 ### Markdown
 
