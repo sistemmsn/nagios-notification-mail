@@ -15,43 +15,30 @@ Ejemplo de notificación de servicio:
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
 
 Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST y SERVICES
 
 - Nota: la contraseña de nagios -no- de debe de llevar caracteres extraños como: $%"# ya que el plugin lo toma como otros valores y no como parte de la contraseña.
 
 
-
-# yum install perl-MIME-tools
-# yum install perl-libwww-perl
-# yum install netpbm
-# yum install perl-Mail-Sendmail
-# yum install perl-Getopt-Long
-# yum install perl-Digest
-# yum install perl-LWP-Protocol-https
-# yum install perl-File-Which
-
-## Parámetros a modificar dentro de los 2 scritp (host y services)
-
-
-# the sender e-mail address to be seen by recipients
-`my $mail_sender  = "Nagios Monitoring <no-reply\@tuempresadecorreo.com>"; `
-- Nota: aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo agregar ese remitente como seguro. 
-
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```markdown
+ yum install perl-MIME-tools
+ yum install perl-libwww-perl
+ yum install netpbm
+ yum install perl-Mail-Sendmail
+ yum install perl-Getopt-Long
+ yum install perl-Digest
+ yum install perl-LWP-Protocol-https
+ yum install perl-File-Which
 ```
+
+Parámetros a modificar dentro de los 2 scritp (host y services)
+
+```markdown
+# the sender e-mail address to be seen by recipients
+my $mail_sender  = "Nagios Monitoring <no-reply\@tuempresadecorreo.com>";
+```
+Nota: aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo agregar ese remitente como seguro. 
 
 
 
