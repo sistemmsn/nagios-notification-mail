@@ -11,12 +11,9 @@ Ejemplo de notificación de servicio:
 
 ![Ejemplo](/images/ejemplo.png)
 
+- Nota: la contraseña de nagios `no` de debe de llevar caracteres extraños como: $%"# ya que el plugin lo toma como otros valores y no como parte de la contraseña.
+
 ### Requerimiento
-
-Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST y SERVICES.
-
-- Nota: la contraseña de nagios -no- de debe de llevar caracteres extraños como: $%"# ya que el plugin lo toma como otros valores y no como parte de la contraseña.
-
 
 ```markdown
  yum install perl-MIME-tools
@@ -29,7 +26,7 @@ Agregare las partes que modificaran en el plugin esto aplica para ambos de HOST 
  yum install perl-File-Which
 ```
 
-Parámetros a modificar dentro de los 2 scritp (host y services).
+### Agregare las partes ha modificar en el plugin esto aplica para ambos (HOST y SERVICES).
 
 ```markdown
 # the sender e-mail address to be seen by recipients
@@ -78,7 +75,7 @@ my $domain            = "\@tuempresadecorreo.com";
 - Nota aquí puedes poner un correo ficticio, obviamente al hacer eso estarían llegando a spam solo agregar ese remitente como seguro.
 
 
-Aqui iria su logo de la empresa.
+-- Aqui iria su logo de la empresa.
 
 ```markdown
 # ########################################################################
@@ -88,6 +85,29 @@ Aqui iria su logo de la empresa.
 # ########################################################################
 my $logofile = "/srv/www/std-root/nagios.fm4dd.com/images/nagios-mail.gif";
 ```
+
+### Parametros en el command.cfg
+
+```markdown
+###########################################################
+# 'service-email-pnp4n-int-en' command definition, sends
+# multipart HTML e-mails, English with Nagios URL's + graph
+###########################################################
+define command{
+command_name    service-email-pnp4n-int
+command_line    $USER1$/pnp4n_send_service_mail.pl  -p "Nombre de la empresa, o lo que quieras poner."  -r "$CONTACTEMAIL$"  -c "$CONTACTADDRESS1$" -f graph -u -l es  
+ }
+```
+- Nota opcional: este parámetro es para agregar a personas con en la parte "cc" ósea con copia ( -c "$CONTACTADDRESS1$")
+
+ ```markdown
+define command{
+command_name    host-email-pnp4n-int
+command_line    $USER1$/pnp4n_send_host_mail.pl  -p "Nombre de la empresa, o lo que quieras poner."  -r "$CONTACTEMAIL$"  -c "$CONTACTADDRESS1$" -f graph -u -l es 
+}
+```
+
+
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
