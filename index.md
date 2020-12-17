@@ -86,6 +86,39 @@ my $domain            = "\@tuempresadecorreo.com";
 my $logofile = "/srv/www/std-root/nagios.fm4dd.com/images/nagios-mail.gif";
 ```
 
+
+### Centrado de grafica
+
+- Algunos usuarios les ha pasado que la imagen de la grafica no se centra la solución es la siguiente:
+
+-- Buscamos el siguiente fragmento de codigo.
+
+```markdown
+ # if we got the graph format and a image has been generated, we add it here
+  if (defined($graph_img) && $o_format eq "graph") {
+    $graph_id = create_content_id();
+    $html_msg .= "<br><img src=\"cid:$graph_id\">\n";
+  }
+```
+
+-- En esta linea de código  `$html_msg .= "<br><img src=\"cid:$graph_id\">\n"; `, lo modificamos y agregamos lo siguinte:
+
+`$html_msg .= "<br><div style=\"text-align: center;\"><img src=\"cid:$graph_id\"></div>\n";`
+
+
+-- Quedaria de la siguiente manera:
+```markdown
+  # if we got the graph format and a image has been generated, we add it here
+  if (defined($graph_img) && $o_format eq "graph") {
+    $graph_id = create_content_id();
+    $html_msg .= "<br><div style=\"text-align: center;\"><img src=\"cid:$graph_id\"></div>\n";
+  }
+```
+<h2>En Colaboración</h2> 
+
+- Gracias a @vratos.
+
+
 ### Parametros en el command.cfg
 
 ```markdown
@@ -131,7 +164,7 @@ define contact {
 
  ```markdown
 define contact {
-  
+
   contact_name                    Support                     
   use                             generic-contact             
   alias                           Business support team
