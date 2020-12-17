@@ -9,7 +9,7 @@ Ejemplo de notificación de servicio:
 
 ### Large image
 
-!(/sistemmsn/nagios-notification/blob/gh-pages/ejemplo.png?raw=true)
+![GitHub Logo](/images/ejemplo.png)
 
 ### Markdown
 
